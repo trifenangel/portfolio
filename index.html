@@ -21,12 +21,14 @@
   a{color:inherit;}
 
   .halftone{background-color:var(--red);
-    background-image:
-      radial-gradient(circle, rgba(255,255,255,.08) 1.5px, transparent 1.5px),
-      radial-gradient(circle, rgba(0,0,0,.12) 2px, transparent 2px);
-    background-size:26px 26px, 46px 46px;
-    background-position:0 0, 13px 13px;
-    color:var(--cream);}
+  background-image:
+    radial-gradient(circle, rgba(0,0,0,.22) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(0,0,0,.16) 2.2px, transparent 2.2px),
+    radial-gradient(circle, rgba(0,0,0,.12) 3.4px, transparent 3.4px),
+    radial-gradient(circle, rgba(255,255,255,.05) 1.4px, transparent 1.4px);
+  background-size:16px 16px, 30px 30px, 58px 58px, 22px 22px;
+  background-position:0 0, 11px 6px, 26px 42px, 4px 18px;
+  color:var(--cream);}
 
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;
