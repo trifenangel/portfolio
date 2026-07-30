@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Angelica Trifena Supriyanto — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,500;1,700&family=Yellowtail&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --red:    #a3211f;
+    --red2:   #8a1c1a;
+    --cream:  #fffdfa;
+    --ink:    #2a1817;
+    --dim:    #6e5a58;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);font-family:'Inter',sans-serif;font-weight:300;color:var(--ink);overflow-x:hidden;}
+  ::selection{background:var(--red);color:var(--cream);}
+  a{color:inherit;}
+
+  .halftone{background-color:var(--red);
+    background-image:
+      radial-gradient(circle, rgba(255,255,255,.08) 1.5px, transparent 1.5px),
+      radial-gradient(circle, rgba(0,0,0,.12) 2px, transparent 2px);
+    background-size:26px 26px, 46px 46px;
+    background-position:0 0, 13px 13px;
+    color:var(--cream);}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;
+    padding:1.3rem 3rem;transition:all .3s ease;}
+  nav.scrolled{background:rgba(255,253,250,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 rgba(0,0,0,.06);}
+  .nav-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1.3rem;color:var(--red);
+    text-decoration:none;}
+  .nav-links{display:flex;gap:2rem;list-style:none;}
+  .nav-links a{color:var(--ink);text-decoration:none;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+    font-weight:500;transition:color .2s;}
+  .nav-links a:hover{color:var(--red);}
+
+  /* COVER */
+  .cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:2rem;position:relative;}
+  .cover-year{font-family:'IBM Plex Mono',monospace;font-size:.85rem;letter-spacing:.2em;margin-bottom:1.6rem;
+    opacity:.85;}
+  .cover-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.6rem,8vw,6rem);
+    line-height:1;}
+  .cover-title .script{font-family:'Yellowtail',cursive;font-weight:400;display:block;font-size:.55em;
+    margin-bottom:.15em;}
+  .cover-by{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;margin-top:1.6rem;opacity:.9;}
+
+  /* SECTION SHELLS */
+  section{padding:6rem 3rem;}
+  .sec-divider{text-align:center;padding:5rem 2rem;}
+  .sec-divider .kicker{font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.18em;
+    text-transform:uppercase;margin-bottom:.6rem;opacity:.85;}
+  .sec-divider h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(2rem,5vw,3.2rem);}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* ABOUT */
+  .about-head{text-align:center;margin-bottom:3rem;}
+  .about-head h2{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,3.6rem);}
+  .about-head h2 .r{color:var(--red);font-weight:900;}
+  .about-head h2 .i{font-style:italic;font-weight:600;}
+  .about-layout{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:2.5rem;align-items:center;max-width:1180px;
+    margin:0 auto;}
+  .about-photo-wrap{aspect-ratio:3/4;overflow:hidden;border-radius:4px;}
+  .about-photo-wrap img{width:100%;height:100%;object-fit:cover;filter:sepia(1) saturate(3.2) hue-rotate(-50deg) brightness(.95) contrast(1.05);}
+  .about-col p{font-size:.92rem;line-height:1.85;color:var(--dim);margin-bottom:1.1rem;}
+  .about-col.right p{text-align:right;}
+  .about-col strong{color:var(--ink);font-weight:600;}
+
+  /* EXPERIENCE BADGES */
+  .badge-row{display:flex;justify-content:center;flex-wrap:wrap;gap:2.2rem;margin-bottom:3rem;}
+  .badge{width:170px;height:170px;border-radius:50%;background:var(--red);color:var(--cream);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    padding:1.2rem;position:relative;}
+  .badge .role{font-family:'Playfair Display',serif;font-weight:700;font-style:italic;font-size:.92rem;
+    line-height:1.25;margin-bottom:.4rem;}
+  .badge .years{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.05em;opacity:.85;}
+  .exp-title{text-align:center;font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.8rem,5vw,2.8rem);
+    color:var(--red);}
+  .exp-title .i{font-style:italic;font-weight:600;display:block;font-size:1.1em;}
+
+  /* PAPERS (as "projects") */
+  .paper-block{max-width:1000px;margin:0 auto 4rem;}
+  .paper-num{font-family:'Yellowtail',cursive;font-size:2.4rem;color:var(--red);margin-bottom:.6rem;}
+  .paper-title{font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;margin-bottom:.8rem;
+    line-height:1.35;}
+  .paper-meta{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.05em;color:var(--dim);
+    margin-bottom:1.2rem;text-transform:uppercase;}
+  .paper-desc{font-size:.9rem;line-height:1.8;color:var(--dim);}
+  .paper-status{display:inline-block;margin-top:1.2rem;font-family:'IBM Plex Mono',monospace;font-size:.68rem;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);padding:.45rem .9rem;}
+  .sparkline{width:100%;height:70px;margin:1.4rem 0;}
+  .sparkline path{fill:none;stroke:var(--red);stroke-width:1.6;opacity:.55;}
+
+  /* CERTS + SKILLS (compact) */
+  .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;max-width:1100px;margin:0 auto;}
+  .cs-card{border:1px solid #e8ddd6;padding:1.6rem 1.8rem;background:var(--cream);}
+  .cs-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--red);margin-bottom:.8rem;}
+  .cs-card ul{list-style:none;}
+  .cs-card li{font-size:.83rem;color:var(--dim);padding:.3rem 0;border-bottom:1px solid #f0e8e2;line-height:1.6;}
+  .cs-card li:last-child{border-bottom:none;}
+  .cs-card li a{color:var(--dim);text-decoration:none;}
+  .cs-card li a:hover{color:var(--red);}
+
+  /* CONTACT */
+  .contact-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:3rem;align-items:center;max-width:1100px;
+    margin:0 auto;}
+  .contact-photo{aspect-ratio:3/4;overflow:hidden;border-radius:4px;}
+  .contact-photo img{width:100%;height:100%;object-fit:cover;
+    filter:sepia(1) saturate(3.2) hue-rotate(-50deg) brightness(.85) contrast(1.1);}
+  .contact-title{font-family:'Playfair Display',serif;font-weight:900;font-style:italic;
+    font-size:clamp(2.4rem,7vw,4.2rem);margin-bottom:1rem;}
+  .contact-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;opacity:.9;
+    margin-bottom:2rem;line-height:1.7;}
+  .contact-rows{display:flex;flex-direction:column;gap:1.1rem;}
+  .contact-row b{display:block;font-size:.95rem;margin-bottom:.15rem;}
+  .contact-row a, .contact-row span{font-size:.88rem;opacity:.9;}
+  .contact-row a{text-decoration:none;color:var(--cream);border-bottom:1px solid rgba(255,255,255,.4);}
+
+  .thankyou{text-align:center;padding:4.5rem 2rem;}
+  .thankyou .script{font-family:'Yellowtail',cursive;font-size:clamp(2.4rem,7vw,4rem);line-height:1.1;}
+
+  footer{text-align:center;padding:1.6rem;font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--dim);}
+
+  @media(max-width:900px){
+    nav{padding:1rem 1.4rem;} section{padding:4rem 1.4rem;}
+    .about-layout{grid-template-columns:1fr;} .about-col.right p{text-align:left;}
+    .contact-wrap{grid-template-columns:1fr;}
+    .cs-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:600px){.nav-links{display:none;} .cs-grid{grid-template-columns:1fr;} .badge{width:135px;height:135px;}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a class="nav-logo" href="#">A.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#papers">Papers</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- COVER -->
+<div class="cover halftone">
+  <div class="cover-year">2026</div>
+  <h1 class="cover-title">
+    <span class="script">academic</span>
+    Portfolio
+  </h1>
+  <div class="cover-by">by Angelica Trifena Supriyanto</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-head reveal">
+    <h2><span class="r">about</span> <span class="i">me</span></h2>
+  </div>
+  <div class="about-layout">
+    <div class="about-col reveal">
+      <p>Welcome to my academic portfolio — third-year <strong>Applied Mathematics</strong> student
+        specializing in <strong>Business Mathematics</strong> at Universitas Pelita Harapan.</p>
+      <p>I have a strong interest in <strong>quantitative finance</strong>, statistical modeling, and
+        data-driven decision making. I enjoy applying mathematical methods, programming, and analytical
+        thinking to solve complex problems.</p>
+    </div>
+    <div class="about-photo-wrap reveal">
+      <img src="photo-angelica.jpeg" alt="Angelica Trifena Supriyanto">
+    </div>
+    <div class="about-col right reveal">
+      <p>Currently conducting my undergraduate thesis on the impact of geopolitical conflicts on
+        <strong>energy-sector stock performance</strong> across Indonesia, Malaysia, and Thailand.</p>
+      <p>Beyond research, I've served as a <strong>Teaching Assistant</strong> and taken on leadership
+        roles in student organizations — strengthening my communication, teamwork, and project
+        management skills.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="badge-row reveal">
+    <div class="badge">
+      <div class="role">Teaching<br>Assistant</div>
+      <div class="years">2026</div>
+    </div>
+    <div class="badge">
+      <div class="role">Marketing<br>Division</div>
+      <div class="years">2025 – Present</div>
+    </div>
+    <div class="badge">
+      <div class="role">Coordinator,<br>External Division</div>
+      <div class="years">2025 – Present</div>
+    </div>
+    <div class="badge">
+      <div class="role">Master of<br>Ceremony</div>
+      <div class="years">2024 – Present</div>
+    </div>
+  </div>
+  <div class="exp-title reveal">my<span class="i">experience</span></div>
+</section>
+
+<!-- PAPERS -->
+<div class="sec-divider halftone reveal">
+  <div class="kicker">Research</div>
+  <h2>papers &amp; publications</h2>
+</div>
+
+<section id="papers">
+  <div class="paper-block reveal">
+    <div class="paper-num">01</div>
+    <h3 class="paper-title">Forecasting Oil and Gold Prices with Regime and Structural Demand Features</h3>
+    <div class="paper-meta">Conference Paper · ICTIIA 2026, Surabaya · Co-author</div>
+    <svg class="sparkline" viewBox="0 0 600 70" preserveAspectRatio="none">
+      <path d="M0,55 L60,48 L120,58 L180,35 L240,42 L300,20 L360,30 L420,12 L480,25 L540,8 L600,15"/>
+    </svg>
+    <p class="paper-desc">This study investigates one-step-ahead forecasting of WTI crude oil and gold
+      prices over 2018–2025, with out-of-sample evaluation from 2022 to mid-2025. Linear Regression,
+      XGBoost, and Random Forest are compared using cross-market signals, regime indicators, and
+      global EV adoption as a structural demand proxy. XGBoost achieves the lowest errors, with
+      price-level MAPE of 1.82% for oil and 0.74% for gold.</p>
+    <span class="paper-status">Accepted for Presentation</span>
+  </div>
+
+  <div class="paper-block reveal">
+    <div class="paper-num">02</div>
+    <h3 class="paper-title">Analisis Longitudinal Respons Saham Energi terhadap Lima Konflik Geopolitik
+      Global: Perbandingan Subsektor dan Negara di Indonesia, Malaysia, dan Thailand</h3>
+    <div class="paper-meta">Undergraduate Thesis (Skripsi) · Caldara &amp; Iacoviello GPR Framework</div>
+    <svg class="sparkline" viewBox="0 0 600 70" preserveAspectRatio="none">
+      <path d="M0,20 L60,35 L120,15 L180,45 L240,30 L300,52 L360,38 L420,48 L480,28 L540,40 L600,22"/>
+    </svg>
+    <p class="paper-desc">Event study analyzing longitudinal stock market responses of energy sector
+      equities to five geopolitical conflict events, from the Crimea annexation (2014) to the
+      Israel-Hamas War (2023), across Indonesia, Malaysia, and Thailand.</p>
+    <span class="paper-status">Writing Results, Discussion &amp; Conclusion</span>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="about-head reveal"><h2><span class="r">certifi</span><span class="i">cations</span></h2></div>
+  <div class="cs-grid reveal">
+    <div class="cs-card">
+      <div class="cs-label">PAI</div>
+      <ul>
+        <li><a href="cert-pai-cf1.pdf">PAI CF1 Certification <span style="opacity:.6;font-size:.75rem;">— ID: 079818DE</span></a></li>
+      </ul>
+    </div>
+    <div class="cs-card">
+      <div class="cs-label">edX</div>
+      <ul>
+        <li><a href="cert-edx-macro-basics.pdf">Macroeconomics — The Basics</a></li>
+        <li><a href="cert-edx-macro-theory.pdf">Macroeconomics: Theory and Policy</a></li>
+        <li><a href="cert-edx-statistical-learning.pdf">Statistical Learning</a></li>
+        <li><a href="cert-edx-personal-finance.pdf">Personal Financial Management</a></li>
+        <li><a href="cert-edx-r-programming.pdf">R Programming for Data Science</a></li>
+      </ul>
+    </div>
+    <div class="cs-card">
+      <div class="cs-label">Kaggle</div>
+      <ul>
+        <li><a href="cert-kaggle-python.pdf">Python</a></li>
+        <li><a href="cert-kaggle-intro-programming.pdf">Intro to Programming</a></li>
+        <li><a href="cert-kaggle-data-cleaning.pdf">Data Cleaning</a></li>
+        <li><a href="cert-kaggle-pandas.pdf">Pandas</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="about-head reveal"><h2><span class="r">my</span> <span class="i">skills</span></h2></div>
+  <div class="cs-grid reveal">
+    <div class="cs-card">
+      <div class="cs-label">Quant Methods</div>
+      <ul>
+        <li>Event Study Methodology</li>
+        <li>Regime &amp; Structural Modeling</li>
+      </ul>
+    </div>
+    <div class="cs-card">
+      <div class="cs-label">Programming</div>
+      <ul>
+        <li>R</li>
+        <li>Data Analysis</li>
+      </ul>
+    </div>
+    <div class="cs-card">
+      <div class="cs-label">Tools</div>
+      <ul>
+        <li>Microsoft Office</li>
+        <li>Pandas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="halftone">
+  <div class="contact-wrap">
+    <div class="contact-photo reveal">
+      <img src="photo-angelica.jpeg" alt="Angelica Trifena Supriyanto">
+    </div>
+    <div class="reveal">
+      <h2 class="contact-title">Let's Work</h2>
+      <p class="contact-sub">Thank you for exploring my portfolio. I look forward to connecting with
+        professionals, researchers, and organizations interested in quantitative finance, data
+        analytics, and applied mathematics.</p>
+      <div class="contact-rows">
+        <div class="contact-row"><b>Email</b><a href="mailto:trifenangel@gmail.com">trifenangel@gmail.com</a></div>
+        <div class="contact-row"><b>Phone</b><a href="tel:+6285280009444">+62 852 8000 9444</a></div>
+        <div class="contact-row"><b>LinkedIn</b><a href="https://linkedin.com/in/angelicatrifena">linkedin.com/in/angelicatrifena</a></div>
+        <div class="contact-row"><b>GitHub</b><a href="https://github.com/trifenangel">github.com/trifenangel</a></div>
+        <div class="contact-row"><b>CV</b><a href="CV_Angelica_Trifena_Supriyanto.pdf">Download PDF</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="thankyou halftone">
+  <div class="script">thank you</div>
+</div>
+
+<footer>© 2026 Angelica Trifena Supriyanto — Tangerang, Indonesia</footer>
+
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'), i*70); io.unobserve(e.target); } });
+  }, {threshold:.1});
+  reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
