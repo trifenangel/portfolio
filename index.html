@@ -109,6 +109,13 @@
 
   /* SKILLS */
   .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;}
+  .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+  .cert-card{border:1px solid var(--border);background:var(--bg2);padding:1.6rem 1.8rem;}
+  .cert-issuer{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--amber);margin-bottom:.9rem;}
+  .cert-list{list-style:none;}
+  .cert-list li{font-size:.85rem;color:var(--dim);line-height:1.6;padding:.3rem 0;border-bottom:1px solid var(--border);}
+  .cert-list li:last-child{border-bottom:none;}
   .skill-group-label{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
     color:var(--amber);margin-bottom:1.1rem;}
   .skill-item{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.85rem;color:var(--dim);}
@@ -129,9 +136,9 @@
   @media(max-width:900px){
     nav{padding:1.1rem 1.6rem;} #hero{padding:0 1.6rem;} .hero-stats{display:none;}
     section{padding:4.5rem 1.6rem;} .about-grid{grid-template-columns:1fr;gap:2.2rem;}
-    .skills-grid{grid-template-columns:1fr 1fr;} footer{padding:1.4rem 1.6rem;flex-direction:column;gap:.4rem;text-align:center;}
+    .skills-grid{grid-template-columns:1fr 1fr;} .cert-grid{grid-template-columns:1fr 1fr;} footer{padding:1.4rem 1.6rem;flex-direction:column;gap:.4rem;text-align:center;}
   }
-  @media(max-width:600px){.skills-grid{grid-template-columns:1fr;} .nav-links{display:none;}}
+  @media(max-width:600px){.skills-grid{grid-template-columns:1fr;} .cert-grid{grid-template-columns:1fr;} .nav-links{display:none;}}
 </style>
 </head>
 <body>
@@ -141,6 +148,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#papers">Papers</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -254,8 +262,42 @@
   </div>
 </section>
 
+</div>
+</section>
+
+<section id="certifications">
+  <div class="sec-head reveal"><span class="sec-num">03</span><h2 class="sec-title">Certifications</h2><div class="sec-line"></div></div>
+  <div class="cert-grid reveal">
+    <div class="cert-card">
+      <div class="cert-issuer">PAI</div>
+      <ul class="cert-list">
+        <li>PAI CF1 Certification</li>
+      </ul>
+    </div>
+    <div class="cert-card">
+      <div class="cert-issuer">edX</div>
+      <ul class="cert-list">
+        <li>Macroeconomics — The Basics</li>
+        <li>Macroeconomics: Theory and Policy</li>
+        <li>Statistical Learning</li>
+        <li>Personal Financial Management Micro Certificate</li>
+        <li>R Programming for Data Science</li>
+      </ul>
+    </div>
+    <div class="cert-card">
+      <div class="cert-issuer">Kaggle</div>
+      <ul class="cert-list">
+        <li>Python</li>
+        <li>Intro to Programming</li>
+        <li>Data Cleaning</li>
+        <li>Pandas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section id="skills">
-  <div class="sec-head reveal"><span class="sec-num">03</span><h2 class="sec-title">Skills</h2><div class="sec-line"></div></div>
+  <div class="sec-head reveal"><span class="sec-num">04</span><h2 class="sec-title">Skills</h2><div class="sec-line"></div></div>
   <div class="skills-grid reveal">
     <div class="skill-group">
       <div class="skill-group-label">Quantitative Methods</div>
