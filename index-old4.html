@@ -93,14 +93,6 @@
   .paper-desc{font-size:.9rem;line-height:1.8;color:var(--dim);}
   .paper-status{display:inline-block;margin-top:1.2rem;font-family:'IBM Plex Mono',monospace;font-size:.68rem;
     letter-spacing:.06em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);padding:.45rem .9rem;}
-  .paper-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
-  .paper-tag{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.04em;color:var(--dim);
-    background:rgba(163,33,31,.06);border:1px solid rgba(163,33,31,.18);padding:.35rem .7rem;border-radius:2px;}
-  .read-more{display:inline-block;margin-top:1.4rem;margin-left:1rem;font-family:'IBM Plex Mono',monospace;
-    font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--red);
-    border-bottom:2px solid var(--red);padding-bottom:2px;transition:opacity .2s;}
-  .read-more:hover{opacity:.65;}
-  .paper-actions{display:flex;align-items:center;flex-wrap:wrap;gap:.3rem;}
   .sparkline{width:100%;height:70px;margin:1.4rem 0;}
   .sparkline path{fill:none;stroke:var(--red);stroke-width:1.6;opacity:.55;}
 
@@ -228,47 +220,36 @@
 </div>
 
 <section id="papers">
-  <div class="paper-block reveal">
+    <div class="paper-block reveal">
     <div class="paper-num">01</div>
-    <h3 class="paper-title">Analysis of Longitudinal Responses of Energy Stocks to Five Global
-      Geopolitical Conflicts: A Comparison Across Subsectors and Countries in Indonesia,
-      Malaysia, and Thailand</h3>
-    <div class="paper-meta">Undergraduate Thesis · Universitas Pelita Harapan · 2026</div>
-    <p class="paper-desc">This undergraduate thesis investigates how five major geopolitical conflicts
-      affected energy-sector stock performance across Indonesia, Malaysia, and Thailand using an
-      event-study methodology. The research compares market reactions across countries and subsectors
-      to better understand the influence of geopolitical risk on Southeast Asian financial markets.</p>
-    <div class="paper-tags">
-      <span class="paper-tag">Event Study</span>
-      <span class="paper-tag">Geopolitical Risk</span>
-      <span class="paper-tag">Energy Markets</span>
-      <span class="paper-tag">Southeast Asia</span>
-    </div>
-    <div class="paper-actions">
-      <span class="paper-status">Ongoing Research</span>
-      <a href="research-thesis.html" class="read-more">Read More →</a>
-    </div>
+    <h3 class="paper-title">Analisis Longitudinal Respons Saham Energi terhadap Lima Konflik Geopolitik
+      Global: Perbandingan Subsektor dan Negara di Indonesia, Malaysia, dan Thailand</h3>
+    <div class="paper-meta">Undergraduate Thesis (Skripsi) · Caldara &amp; Iacoviello GPR Framework</div>
+    <svg class="sparkline" viewBox="0 0 600 70" preserveAspectRatio="none">
+      <path d="M0,20 L60,35 L120,15 L180,45 L240,30 L300,52 L360,38 L420,48 L480,28 L540,40 L600,22"/>
+    </svg>
+    <p class="paper-desc">Event study analyzing longitudinal stock market responses of energy sector
+      equities to five geopolitical conflict events, from the Crimea annexation (2014) to the
+      Israel-Hamas War (2023), across Indonesia, Malaysia, and Thailand.</p>
+    <span class="paper-status">Writing Results, Discussion &amp; Conclusion</span>
   </div>
 
   <div class="paper-block reveal">
     <div class="paper-num">02</div>
     <h3 class="paper-title">Forecasting Oil and Gold Prices with Regime and Structural Demand Features</h3>
-    <div class="paper-meta">Conference Paper · Accepted for Presentation · ICTIIA 2026</div>
-    <p class="paper-desc">This research evaluates forecasting models for one-step-ahead prediction of
-      oil and gold prices, incorporating regime indicators and structural demand features to improve
-      predictive performance. Linear Regression, XGBoost, and Random Forest are compared, with XGBoost
-      achieving the lowest errors (price-level MAPE of 1.82% for oil and 0.74% for gold).</p>
-    <div class="paper-tags">
-      <span class="paper-tag">Forecasting</span>
-      <span class="paper-tag">Time Series</span>
-      <span class="paper-tag">Commodity Prices</span>
-      <span class="paper-tag">Quantitative Finance</span>
-    </div>
-    <div class="paper-actions">
-      <span class="paper-status">Accepted for Presentation</span>
-      <a href="research-ictiia.html" class="read-more">Read More →</a>
-    </div>
+    <div class="paper-meta">Conference Paper · ICTIIA 2026, Surabaya · Co-author</div>
+    <svg class="sparkline" viewBox="0 0 600 70" preserveAspectRatio="none">
+      <path d="M0,55 L60,48 L120,58 L180,35 L240,42 L300,20 L360,30 L420,12 L480,25 L540,8 L600,15"/>
+    </svg>
+    <p class="paper-desc">This study investigates one-step-ahead forecasting of WTI crude oil and gold
+      prices over 2018–2025, with out-of-sample evaluation from 2022 to mid-2025. Linear Regression,
+      XGBoost, and Random Forest are compared using cross-market signals, regime indicators, and
+      global EV adoption as a structural demand proxy. XGBoost achieves the lowest errors, with
+      price-level MAPE of 1.82% for oil and 0.74% for gold.</p>
+    <span class="paper-status">Accepted for Presentation</span>
   </div>
+
+
 </section>
 
 <!-- CERTIFICATIONS -->
