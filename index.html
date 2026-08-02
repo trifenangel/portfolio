@@ -90,11 +90,16 @@
     line-height:1.35;}
   .paper-meta{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.05em;color:var(--dim);
     margin-bottom:1.2rem;text-transform:uppercase;}
-  .paper-desc{font-size:.9rem;line-height:1.8;color:var(--dim);text-align:justify;}  .paper-status{display:inline-block;margin-top:1.2rem;font-family:'IBM Plex Mono',monospace;font-size:.68rem;
+  .paper-desc{font-size:.9rem;line-height:1.8;color:var(--dim);text-align:justify;}  
+  .paper-status{display:inline-block;margin-top:1.2rem;font-family:'IBM Plex Mono',monospace;font-size:.68rem;
     letter-spacing:.06em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);padding:.45rem .9rem;border-radius:8px;}
   .paper-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
   .paper-tag{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.04em;color:var(--dim);
     background:rgba(163,33,31,.06);border:1px solid rgba(163,33,31,.18);padding:.35rem .7rem;border-radius:6px;}
+  .more-line{text-align:center;padding:1.5rem;margin-top:1rem;}
+  .more-line span{font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--dim);}
+  .more-line span::before,.more-line span::after{content:"·";margin:0 .6rem;color:var(--red);}
   .read-more{display:inline-block;margin-top:1.4rem;margin-left:1rem;font-family:'IBM Plex Mono',monospace;
     font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--red);
     border-bottom:2px solid var(--red);padding-bottom:2px;transition:opacity .2s;}
@@ -269,6 +274,10 @@
       <span class="paper-status">Accepted</span>
       <a href="research-ictiia.html" class="read-more">Read More →</a>
     </div>
+  </div>
+
+  <div class="more-line reveal">
+    <span>More research in progress</span>
   </div>
 </section>
 
