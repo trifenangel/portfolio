@@ -39,6 +39,8 @@
   .file-btn{font-family:'IBM Plex Mono',monospace;font-size:.78rem;text-decoration:none;color:var(--cream);
     background:var(--red);padding:.7rem 1.3rem;border-radius:8px;transition:background .2s;}
   .file-btn:hover{background:var(--red2);}
+  .file-btn.disabled{background:#e8ddd6;color:#a8998f;cursor:not-allowed;}
+  .file-btn.disabled:hover{background:#e8ddd6;}
   .takeaways{list-style:none;}
   .takeaways li{padding:.5rem 0 .5rem 1.5rem;position:relative;color:var(--dim);font-size:.95rem;
     border-bottom:1px solid #efe6df;}
@@ -56,23 +58,27 @@
 <a href="index.html#papers" class="back-link">← Back to Portfolio</a>
 <div class="top-banner halftone">
   <div class="banner-type">Undergraduate Thesis · Universitas Pelita Harapan · 2026</div>
-  <h1 class="banner-title">Analysis of Longitudinal Responses of Energy Stocks to Five Global Geopolitical Conflicts: A Comparison Across Subsectors and Countries in Indonesia, Malaysia, and Thailand</h1>
+  <h1 class="banner-title">Analysis of Longitudinal Responses of Energy Stocks to Five Global Geopolitical Conflicts: A Comparison 
+    Across Subsectors and Countries in Indonesia, Malaysia, and Thailand</h1>
 </div>
 <div class="wrap">
   <section class="detail-sec">
     <h2 class="detail-h">Overview</h2>
-    <p>This undergraduate thesis investigates how five major geopolitical conflicts affected energy-sector stock performance across Indonesia, Malaysia, and Thailand using an event-study methodology. The research compares market reactions across countries and subsectors to better understand the influence of geopolitical risk on Southeast Asian financial markets.</p>
+    <p>Financial markets are increasingly sensitive to geopolitical instability, yet much of the existing research focuses on 
+      developed economies. This thesis addresses this gap through a longitudinal analysis of how energy-sector stocks in Indonesia, 
+      Malaysia, and Thailand responded to five major global geopolitical conflicts. Using an event-study methodology, it analyzes 
+      abnormal market reactions around each event and compares them across countries and energy subsectors. Rather than asking only 
+      whether these markets react to geopolitical risk, the research investigates how those reactions differ across national contexts 
+      and industry structures, offering insights into the resilience and vulnerability of emerging-market energy equities.</p>
   </section>
   <section class="detail-sec">
     <h2 class="detail-h">Research Information</h2>
     <div class="info-card">
       <div class="inforow"><span class="infolabel">Year</span><span class="infoval">2026</span></div>
       <div class="inforow"><span class="infolabel">Author</span><span class="infoval">Angelica Trifena Supriyanto</span></div>
-      <div class="inforow"><span class="infolabel">Supervisors</span><span class="infoval">Helena Margaretha, Ferry Vincenttius</span></div>
       <div class="inforow"><span class="infolabel">Institution</span><span class="infoval">Universitas Pelita Harapan</span></div>
-      <div class="inforow"><span class="infolabel">Research Area</span><span class="infoval">Quantitative Finance, Event Study</span></div>
-      <div class="inforow"><span class="infolabel">Keywords</span><span class="infoval">Event Study, Geopolitical Risk, Energy Markets, Southeast Asia</span></div>
-      <div class="inforow"><span class="infolabel">Status</span><span class="infoval">Ongoing Research</span></div>
+      <div class="inforow"><span class="infolabel">Keywords</span><span class="infoval">Event Study, Longitudinal Data Analysis, Geopolitical Risk, Energy Markets, Southeast Asia</span></div>
+      <div class="inforow"><span class="infolabel">Status</span><span class="infoval">Ongoing</span></div>
     </div>
   </section>
   <section class="detail-sec">
@@ -80,7 +86,7 @@
     <div class="file-row">
       <a href="thesis-angelica.pdf" class="file-btn">📄 View Thesis PDF</a>
       <a href="thesis-code/" class="file-btn">💻 View Source Code</a>
-    </div>
+      <a href="#" class="file-btn disabled" onclick="event.preventDefault(); alert('Dataset not available yet — coming soon.');">💾 View Data</a>    </div>
   </section>
   <section class="detail-sec">
     <h2 class="detail-h">Key Takeaways</h2>
