@@ -32,7 +32,7 @@
     color:var(--red);margin-bottom:1.1rem;}
 .detail-sec p{color:var(--dim);font-size:.98rem;text-align:justify;}
   .inforow{display:flex;justify-content:space-between;gap:1.5rem;padding:.6rem 0;
-    border-bottom:1px solid #efe6df;font-size:.9rem;}    border-bottom:1px solid #efe6df;font-size:.9rem;}
+    border-bottom:1px solid #efe6df;font-size:.9rem;}    
   .inforow:last-child{border-bottom:none;}
   .infolabel{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.06em;
     text-transform:uppercase;color:var(--red);white-space:nowrap;}
@@ -41,11 +41,10 @@
   .file-btn{font-family:'IBM Plex Mono',monospace;font-size:.78rem;text-decoration:none;color:var(--cream);
     background:var(--red);padding:.7rem 1.3rem;border-radius:8px;transition:background .2s;}
   .file-btn:hover{background:var(--red2);}
-  .takeaways{list-style:none;}
-  .takeaways li{padding:.5rem 0 .5rem 1.5rem;position:relative;color:var(--dim);font-size:.95rem;
+  .takeaways{list-style:decimal;padding-left:2.6rem;}  
+  .takeaways li{padding:.35rem 0;color:var(--dim);font-size:.95rem;
     border-bottom:1px solid #efe6df;}
   .takeaways li:last-child{border-bottom:none;}
-  .takeaways li::before{content:"→";position:absolute;left:0;color:var(--red);}
   .fig-grid{display:grid;gap:1.4rem;}
   .research-fig{border:1px solid #e8ddd6;border-radius:12px;overflow:hidden;background:#fff;}
   .research-fig img{width:100%;display:block;}
@@ -90,8 +89,8 @@
   <section class="detail-sec">
     <h2 class="detail-h">Research Visual</h2>
     <div class="fig-grid">
-      <figure class="research-fig"><img src="ictiia-fig1.png" alt="Figure 1 — [add caption]"><figcaption>Figure 1 — [add caption]</figcaption></figure>
-      <figure class="research-fig"><img src="ictiia-fig2.png" alt="Figure 2 — [add caption]"><figcaption>Figure 2 — [add caption]</figcaption></figure>
+      <figure class="research-fig"><img src="ictiia-fig1.png" alt="Top predictors in the XGBoost models ranked by feature importance"><figcaption>Figure 1 — Top predictors in the XGBoost models ranked by feature importance (information gain), for oil and gold.</figcaption></figure>
+      <figure class="research-fig"><img src="ictiia-fig2.png" alt="Forecast error rising across market-stress levels"><figcaption>Figure 2 — Forecast error (RMSE) rising across market-stress levels under the VIX and GPR regimes.</figcaption></figure>
     </div>
   </section>
   <section class="detail-sec">
