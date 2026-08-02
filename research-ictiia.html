@@ -28,7 +28,7 @@
   .info-card,.takeaways{background:#fbf6f2;border:1px solid #f0e6df;border-radius:14px;padding:1.4rem 1.6rem;}
   .detail-h{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:1.5rem;
     color:var(--red);margin-bottom:1.1rem;}
-  .detail-sec p{color:var(--dim);font-size:.98rem;}
+  .detail-sec p{color:var(--dim);font-size:.98rem;text-align:justify;}  .inforow{display:flex;justify-content:space-between;gap:1.5rem;padding:.6rem 0;
   .inforow{display:flex;justify-content:space-between;gap:1.5rem;padding:.6rem 0;
     border-bottom:1px solid #efe6df;font-size:.9rem;}
   .inforow:last-child{border-bottom:none;}
@@ -61,8 +61,11 @@
 <div class="wrap">
   <section class="detail-sec">
     <h2 class="detail-h">Overview</h2>
-    <p>This research evaluates forecasting models for one-step-ahead prediction of oil and gold prices, incorporating regime indicators and structural demand features to improve predictive performance. Linear Regression, XGBoost, and Random Forest are compared, with XGBoost achieving the lowest errors (price-level MAPE of 1.82% for oil and 0.74% for gold).</p>
-  </section>
+    <p>Commodity prices play a critical role in investment, risk management, and economic decision-making, yet accurately forecasting 
+      them remains challenging due to changing market conditions and structural shifts. This research investigates whether combining 
+      regime indicators with structural demand features, including global EV adoption, can improve one-step-ahead forecasting of crude 
+      oil and gold prices. By comparing statistical and machine learning models under different market environments, the study examines 
+      not only predictive accuracy but also the strengths and limitations of each approach in dynamic financial markets.</p>  </section>
   <section class="detail-sec">
     <h2 class="detail-h">Research Information</h2>
     <div class="info-card">
