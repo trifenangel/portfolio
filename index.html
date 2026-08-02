@@ -111,6 +111,21 @@
   /* CERTS + SKILLS (compact) */
   .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;max-width:1100px;margin:0 auto;}
   .cs-card{border:1px solid #e8ddd6;padding:1.6rem 1.8rem;background:var(--cream);border-radius:12px;}
+  .cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:1300px;margin:0 auto;}
+  .cert-item{border:1px solid #e8ddd6;border-left:4px solid var(--red);border-radius:12px;
+    padding:1.3rem 1.5rem;background:#fff;transition:transform .2s,box-shadow .2s;text-decoration:none;display:block;}
+  .cert-item:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(163,33,31,.08);}
+  .cert-item .chip{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.08em;
+    text-transform:uppercase;background:rgba(163,33,31,.08);color:var(--red);padding:.25rem .6rem;
+    border-radius:20px;margin-bottom:.7rem;}
+  .cert-item .cert-name{font-size:.9rem;font-weight:500;color:var(--ink);line-height:1.4;}
+  .cert-item .cert-id{display:block;margin-top:.4rem;font-family:'IBM Plex Mono',monospace;font-size:.66rem;
+    color:var(--dim);opacity:.8;}
+  .cert-more{border:1px dashed #d8b8b2;border-radius:12px;padding:1.3rem 1.5rem;background:transparent;
+    display:flex;align-items:center;justify-content:center;text-align:center;min-height:100%;
+    grid-column:span 2;}
+  .cert-more span{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--dim);
+    line-height:1.5;}
   .cs-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;
     color:var(--red);margin-bottom:.8rem;}
   .cs-card ul{list-style:none;}
@@ -144,8 +159,9 @@
     .about-layout{grid-template-columns:1fr;} .about-col.right p{text-align:left;}
     .contact-wrap{grid-template-columns:1fr;}
     .cs-grid{grid-template-columns:1fr 1fr;}
+    .cert-grid{grid-template-columns:1fr 1fr;}
   }
-  @media(max-width:600px){.nav-links{display:none;} .cs-grid{grid-template-columns:1fr;} .badge{width:135px;height:135px;}}
+  @media(max-width:600px){.nav-links{display:none;} .cs-grid{grid-template-columns:1fr;} .cert-grid{grid-template-columns:1fr;} .badge{width:135px;height:135px;}}
 </style>
 </head>
 <body>
@@ -288,31 +304,49 @@
 </div>
 
 <section id="certifications">
-  <div class="cs-grid reveal">
-    <div class="cs-card">
-      <div class="cs-label">PAI</div>
-      <ul>
-        <li><a href="cert-pai-cf1.pdf">PAI CF1 Certification <span style="opacity:.6;font-size:.75rem;">— ID: 079818DE</span></a></li>
-      </ul>
-    </div>
-    <div class="cs-card">
-      <div class="cs-label">edX</div>
-      <ul>
-        <li><a href="cert-edx-macro-basics.pdf">Macroeconomics — The Basics</a></li>
-        <li><a href="cert-edx-macro-theory.pdf">Macroeconomics: Theory and Policy</a></li>
-        <li><a href="cert-edx-statistical-learning.pdf">Statistical Learning</a></li>
-        <li><a href="cert-edx-personal-finance.pdf">Personal Financial Management</a></li>
-        <li><a href="cert-edx-r-programming.pdf">R Programming for Data Science</a></li>
-      </ul>
-    </div>
-    <div class="cs-card">
-      <div class="cs-label">Kaggle</div>
-      <ul>
-        <li><a href="cert-kaggle-python.pdf">Python</a></li>
-        <li><a href="cert-kaggle-intro-programming.pdf">Intro to Programming</a></li>
-        <li><a href="cert-kaggle-data-cleaning.pdf">Data Cleaning</a></li>
-        <li><a href="cert-kaggle-pandas.pdf">Pandas</a></li>
-      </ul>
+  <div class="cert-grid reveal">
+    <a href="cert-pai-cf1.pdf" class="cert-item">
+      <span class="chip">PAI</span>
+      <div class="cert-name">PAI CF1 Certification<span class="cert-id">ID: 079818DE</span></div>
+    </a>
+    <a href="cert-edx-macro-basics.pdf" class="cert-item">
+      <span class="chip">edX</span>
+      <div class="cert-name">Macroeconomics — The Basics</div>
+    </a>
+    <a href="cert-edx-macro-theory.pdf" class="cert-item">
+      <span class="chip">edX</span>
+      <div class="cert-name">Macroeconomics: Theory and Policy</div>
+    </a>
+    <a href="cert-edx-statistical-learning.pdf" class="cert-item">
+      <span class="chip">edX</span>
+      <div class="cert-name">Statistical Learning</div>
+    </a>
+    <a href="cert-edx-personal-finance.pdf" class="cert-item">
+      <span class="chip">edX</span>
+      <div class="cert-name">Personal Financial Management</div>
+    </a>
+    <a href="cert-edx-r-programming.pdf" class="cert-item">
+      <span class="chip">edX</span>
+      <div class="cert-name">R Programming for Data Science</div>
+    </a>
+    <a href="cert-kaggle-python.pdf" class="cert-item">
+      <span class="chip">Kaggle</span>
+      <div class="cert-name">Python</div>
+    </a>
+    <a href="cert-kaggle-intro-programming.pdf" class="cert-item">
+      <span class="chip">Kaggle</span>
+      <div class="cert-name">Intro to Programming</div>
+    </a>
+    <a href="cert-kaggle-data-cleaning.pdf" class="cert-item">
+      <span class="chip">Kaggle</span>
+      <div class="cert-name">Data Cleaning</div>
+    </a>
+    <a href="cert-kaggle-pandas.pdf" class="cert-item">
+      <span class="chip">Kaggle</span>
+      <div class="cert-name">Pandas</div>
+    </a>
+    <div class="cert-more">
+      <span>Committed to continuous learning.</span>
     </div>
   </div>
 </section>
