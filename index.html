@@ -67,9 +67,21 @@
     margin:0 auto;}
   .about-photo-wrap{aspect-ratio:3/4;overflow:hidden;border-radius:12px;}
   .about-photo-wrap img{width:100%;height:100%;object-fit:cover;filter:sepia(1) saturate(3.2) hue-rotate(-50deg) brightness(.95) contrast(1.05);}
-  .about-col p{font-size:.92rem;line-height:1.85;color:var(--dim);margin-bottom:1.1rem;}
-  .about-col.right p{text-align:right;}
+  .about-col p{font-size:.92rem;line-height:1.85;color:var(--dim);margin-bottom:1.1rem;text-align:justify;hyphens:auto;}
+  .about-col.right p{text-align:justify;hyphens:auto;}
   .about-col strong{color:var(--ink);font-weight:600;}
+  .about-skills{max-width:1180px;margin:3rem auto 0;padding-top:2.2rem;border-top:1px solid #e8ddd6;}
+  .about-skills::before{content:"At a Glance";display:block;font-family:'IBM Plex Mono',monospace;font-size:.7rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--red);text-align:center;margin-bottom:1.4rem;}
+  .skills-list{max-width:1000px;margin:0 auto;}
+  .skill-row{display:grid;grid-template-columns:200px 1fr;gap:1.5rem;align-items:start;padding:1.4rem 0;
+    border-bottom:1px solid #efe6df;}
+  .skill-row:last-child{border-bottom:none;}
+  .skill-cat{font-family:'Playfair Display',serif;font-weight:700;font-size:1.05rem;color:var(--red);}
+  .skill-pills{display:flex;flex-wrap:wrap;gap:.5rem;}
+  .skill-pill{font-size:.82rem;color:var(--dim);background:#fff;border:1px solid #e2d3cc;border-radius:6px;
+    padding:.4rem .85rem;transition:border-color .2s,color .2s;}
+  .skill-pill:hover{border-color:var(--red);color:var(--red);}
 
   /* EXPERIENCE BADGES */
   .badge-row{display:flex;justify-content:center;flex-wrap:wrap;gap:2.2rem;margin-bottom:3rem;}
@@ -120,6 +132,9 @@
   .skill-pill{font-size:.82rem;color:var(--dim);background:#fff;border:1px solid #e2d3cc;border-radius:6px;
     padding:.4rem .85rem;transition:border-color .2s,color .2s;}
   .skill-pill:hover{border-color:var(--red);color:var(--red);}
+  .skills-line{text-align:center;font-size:.92rem;color:var(--dim);line-height:1.8;margin-bottom:.6rem;}
+  .skills-line .sk-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--red);margin-right:.6rem;}
   .cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:1300px;margin:0 auto;}
   .cert-item{border:1px solid #e8ddd6;border-left:4px solid var(--red);border-radius:12px;
     padding:1.3rem 1.5rem;background:#fff;transition:transform .2s,box-shadow .2s;text-decoration:none;
@@ -187,7 +202,6 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#papers">Papers</a></li>
     <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -209,23 +223,59 @@
   </div>
   <div class="about-layout">
     <div class="about-col reveal">
-      <p>Welcome to my academic portfolio — third-year <strong>Applied Mathematics</strong> student
-        specializing in <strong>Business Mathematics</strong> at Universitas Pelita Harapan.</p>
-      <p>I have a strong interest in <strong>quantitative finance</strong>, statistical modeling, and
-        data-driven decision making. I enjoy applying mathematical methods, programming, and analytical
-        thinking to solve complex problems.</p>
+      <p>I'm a third-year <strong>Applied Mathematics</strong> student at Universitas Pelita Harapan, specializing in 
+        <strong>Business Mathematics</strong>, with a deep interest in quantitative finance and the challenge of finding 
+        structure in messy, unpredictable financial data.</p>
+      <p>I work where mathematical rigor meets real markets, building forecasting models, running event studies, and letting 
+        data settle questions that intuition cannot. As I grow, I aspire to build a career in <strong> finance or other data-driven 
+        fields</strong>, applying mathematical modeling and analytical thinking to problems that matter.</p>
     </div>
     <div class="about-photo-wrap reveal">
       <img src="photo-angelica.jpeg" alt="Angelica Trifena Supriyanto">
     </div>
     <div class="about-col right reveal">
-      <p>Currently conducting my undergraduate thesis on the impact of geopolitical conflicts on
-        <strong>energy-sector stock performance</strong> across Indonesia, Malaysia, and Thailand.</p>
-      <p>Beyond research, I've served as a <strong>Teaching Assistant</strong> and taken on leadership
-        roles in student organizations — strengthening my communication, teamwork, and project
-        management skills.</p>
+      <p>Currently, I'm conducting my undergraduate thesis on how <strong>geopolitical conflicts</strong> affect energy-sector stock performance 
+        across Indonesia, Malaysia, and Thailand, using a longitudinal event-study approach. I'm also preparing a conference paper 
+        on <strong>oil and gold price forecasting</strong>, exploring how statistical and machine learning methods can sharpen prediction in financial 
+        markets.</p>
+      <p>Beyond research, I've worked as a <strong>Teaching Assistant</strong> and currently work part-time in an <strong>marketing division</strong>, alongside leadership 
+        roles across student organizations. These experiences have strengthened my communication, teamwork, and project management skills.</p>
     </div>
   </div>
+
+  <!-- <div class="about-skills reveal">
+    <div class="skills-list">
+      <div class="skill-row">
+        <div class="skill-cat">Research Interests</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Quantitative Finance</span>
+          <span class="skill-pill">Forecasting</span>
+          <span class="skill-pill">Financial Markets</span>
+          <span class="skill-pill">Machine Learning</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Technical Skills</div>
+        <div class="skill-pills">
+          <span class="skill-pill">R</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Pandas</span>
+          <span class="skill-pill">Event Study</span>
+          <span class="skill-pill">Time Series Analysis</span>
+          <span class="skill-pill">Statistical Modeling</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Professional Skills</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Communication</span>
+          <span class="skill-pill">Leadership</span>
+          <span class="skill-pill">Teamwork</span>
+          <span class="skill-pill">Project Management</span>
+        </div>
+      </div>
+    </div>
+  </div> -->
 </section>
 
 <!-- EXPERIENCE -->
@@ -361,46 +411,6 @@
     </a>
     <div class="cert-more">
       <span>Committed to continuous learning.</span>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<div class="sec-divider halftone reveal">
-  <div class="kicker">Toolkit</div>
-  <h2>my skills</h2>
-</div>
-
-<section id="skills">
-  <div class="skills-list reveal">
-    <div class="skill-row">
-      <div class="skill-cat">Programming &amp; Tools</div>
-      <div class="skill-pills">
-        <span class="skill-pill">R</span>
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">Pandas</span>
-        <span class="skill-pill">Data Analysis</span>
-        <span class="skill-pill">Microsoft Office</span>
-      </div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-cat">Quantitative &amp; Statistical</div>
-      <div class="skill-pills">
-        <span class="skill-pill">Event Study Methodology</span>
-        <span class="skill-pill">Statistical Analysis</span>
-        <span class="skill-pill">Machine Learning</span>
-        <span class="skill-pill">Data Cleaning</span>
-      </div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-cat">Soft Skills</div>
-      <div class="skill-pills">
-        <span class="skill-pill">Public Speaking</span>
-        <span class="skill-pill">Teamwork</span>
-        <span class="skill-pill">Project Management</span>
-        <span class="skill-pill">Problem Solving</span>
-        <span class="skill-pill">Time Management</span>
-      </div>
     </div>
   </div>
 </section>
