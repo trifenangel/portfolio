@@ -111,6 +111,15 @@
   /* CERTS + SKILLS (compact) */
   .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;max-width:1100px;margin:0 auto;}
   .cs-card{border:1px solid #e8ddd6;padding:1.6rem 1.8rem;background:var(--cream);border-radius:12px;}
+  .skills-list{max-width:1000px;margin:0 auto;}
+  .skill-row{display:grid;grid-template-columns:200px 1fr;gap:1.5rem;align-items:start;padding:1.4rem 0;
+    border-bottom:1px solid #efe6df;}
+  .skill-row:last-child{border-bottom:none;}
+  .skill-cat{font-family:'Playfair Display',serif;font-weight:700;font-size:1.05rem;color:var(--red);}
+  .skill-pills{display:flex;flex-wrap:wrap;gap:.5rem;}
+  .skill-pill{font-size:.82rem;color:var(--dim);background:#fff;border:1px solid #e2d3cc;border-radius:6px;
+    padding:.4rem .85rem;transition:border-color .2s,color .2s;}
+  .skill-pill:hover{border-color:var(--red);color:var(--red);}
   .cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:1300px;margin:0 auto;}
   .cert-item{border:1px solid #e8ddd6;border-left:4px solid var(--red);border-radius:12px;
     padding:1.3rem 1.5rem;background:#fff;transition:transform .2s,box-shadow .2s;text-decoration:none;
@@ -164,6 +173,7 @@
     .contact-wrap{grid-template-columns:1fr;}
     .cs-grid{grid-template-columns:1fr 1fr;}
     .cert-grid{grid-template-columns:1fr 1fr;}
+    .skill-row{grid-template-columns:1fr;gap:.7rem;}
   }
   @media(max-width:600px){.nav-links{display:none;} .cs-grid{grid-template-columns:1fr;} .cert-grid{grid-template-columns:1fr;} .badge{width:135px;height:135px;}}
 </style>
@@ -362,27 +372,35 @@
 </div>
 
 <section id="skills">
-  <div class="cs-grid reveal">
-    <div class="cs-card">
-      <div class="cs-label">Quant Methods</div>
-      <ul>
-        <li>Event Study Methodology</li>
-        <li>Regime &amp; Structural Modeling</li>
-      </ul>
+  <div class="skills-list reveal">
+    <div class="skill-row">
+      <div class="skill-cat">Programming &amp; Tools</div>
+      <div class="skill-pills">
+        <span class="skill-pill">R</span>
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">Pandas</span>
+        <span class="skill-pill">Data Analysis</span>
+        <span class="skill-pill">Microsoft Office</span>
+      </div>
     </div>
-    <div class="cs-card">
-      <div class="cs-label">Programming</div>
-      <ul>
-        <li>R</li>
-        <li>Data Analysis</li>
-      </ul>
+    <div class="skill-row">
+      <div class="skill-cat">Quantitative &amp; Statistical</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Event Study Methodology</span>
+        <span class="skill-pill">Statistical Analysis</span>
+        <span class="skill-pill">Machine Learning</span>
+        <span class="skill-pill">Data Cleaning</span>
+      </div>
     </div>
-    <div class="cs-card">
-      <div class="cs-label">Tools</div>
-      <ul>
-        <li>Microsoft Office</li>
-        <li>Pandas</li>
-      </ul>
+    <div class="skill-row">
+      <div class="skill-cat">Soft Skills</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Public Speaking</span>
+        <span class="skill-pill">Teamwork</span>
+        <span class="skill-pill">Project Management</span>
+        <span class="skill-pill">Problem Solving</span>
+        <span class="skill-pill">Time Management</span>
+      </div>
     </div>
   </div>
 </section>
@@ -409,9 +427,6 @@
   </div>
 </section>
 
-<div class="thankyou halftone">
-  <div class="script">thank you</div>
-</div>
 
 <footer>© 2026 Angelica Trifena Supriyanto — Tangerang, Indonesia</footer>
 
