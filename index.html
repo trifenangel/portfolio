@@ -84,16 +84,19 @@
   .skill-pill:hover{border-color:var(--red);color:var(--red);}
 
   /* EXPERIENCE BADGES */
-  .badge-row{display:flex;justify-content:center;flex-wrap:wrap;gap:2.2rem;margin-bottom:3rem;}
-  .badge{width:170px;height:170px;border-radius:50%;background:var(--red);color:var(--cream);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-    padding:1.2rem;position:relative;}
-  .badge .role{font-family:'Playfair Display',serif;font-weight:700;font-style:italic;font-size:.92rem;
-    line-height:1.25;margin-bottom:.4rem;}
-  .badge .years{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.05em;opacity:.85;}
-  .exp-title{text-align:center;font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.8rem,5vw,2.8rem);
-    color:var(--red);}
-  .exp-title .i{font-style:italic;font-weight:600;display:block;font-size:1.1em;}
+  .exp-columns{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1000px;margin:0 auto;}
+  .exp-col-label{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--red);margin-bottom:1.6rem;text-align:center;}
+  .tl{position:relative;padding-left:1.8rem;}
+  .tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:rgba(163,33,31,.22);}
+  .tl-item{position:relative;padding-bottom:1.6rem;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{content:"";position:absolute;left:-1.8rem;top:4px;width:12px;height:12px;border-radius:50%;
+    background:var(--red);border:3px solid var(--cream);box-shadow:0 0 0 2px rgba(163,33,31,.22);}
+  .tl-role{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:var(--ink);line-height:1.3;}
+  .tl-meta{font-family:'IBM Plex Mono',monospace;font-size:.64rem;color:var(--red);text-transform:uppercase;
+    letter-spacing:.04em;margin:.3rem 0;}
+  .tl-desc{font-size:.84rem;color:var(--dim);line-height:1.6;}
 
   /* PAPERS (as "projects") */
   .paper-block{max-width:1000px;margin:0 auto 4rem;}
@@ -190,7 +193,7 @@
     .cert-grid{grid-template-columns:1fr 1fr;}
     .skill-row{grid-template-columns:1fr;gap:.7rem;}
   }
-  @media(max-width:600px){.nav-links{display:none;} .cs-grid{grid-template-columns:1fr;} .cert-grid{grid-template-columns:1fr;} .badge{width:135px;height:135px;}}
+  @media(max-width:600px){.nav-links{display:none;} .cs-grid{grid-template-columns:1fr;} .cert-grid{grid-template-columns:1fr;} .exp-columns{grid-template-columns:1fr;gap:2.5rem;}}
 </style>
 </head>
 <body>
@@ -285,22 +288,46 @@
 </div>
 
 <section id="experience">
-  <div class="badge-row reveal">
-    <div class="badge">
-      <div class="role">Teaching<br>Assistant</div>
-      <div class="years">2026</div>
+  <div class="exp-columns reveal">
+    <div>
+      <div class="exp-col-label">Professional Experience</div>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-role">Marketing Division (Part-time)</div>
+          <div class="tl-meta">2025 – Present · Universitas Pelita Harapan</div>
+          <div class="tl-desc">Supporting the execution of marketing events through logistics, coordination, and multimedia setup.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-role">Teaching Assistant, Computer Applications</div>
+          <div class="tl-meta">2026 · Universitas Pelita Harapan</div>
+          <div class="tl-desc">Graded assignments and supported students in statistical computing and problem solving.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-role">Accounting Intern</div>
+          <div class="tl-meta">2022 – 2023 · Swiss-Belhotel Tarakan</div>
+          <div class="tl-desc">Prepared financial reports and handled daily closing reconciliation across hotel outlets.</div>
+        </div>
+      </div>
     </div>
-    <div class="badge">
-      <div class="role">Marketing<br>Division</div>
-      <div class="years">2025 – Present</div>
-    </div>
-    <div class="badge">
-      <div class="role">Coordinator,<br>External Division</div>
-      <div class="years">2025 – Present</div>
-    </div>
-    <div class="badge">
-      <div class="role">Master of<br>Ceremony</div>
-      <div class="years">2024 – Present</div>
+    <div>
+      <div class="exp-col-label">Organizational Experience</div>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-role">Coordinator of External Division — HMPSM 2025/2026</div>
+          <div class="tl-meta">2025 – Present · Universitas Pelita Harapan</div>
+          <div class="tl-desc">Supervised major programs including a mathematics competition and company visit.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-role">Master of Ceremony</div>
+          <div class="tl-meta">2024 – Present · Universitas Pelita Harapan</div>
+          <div class="tl-desc">Hosted university events, managing flow and coordinating with speakers and committees.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-role">Member of Internal Division — Service Learning Community 2024/2025</div>
+          <div class="tl-meta">2024 – 2025 · Universitas Pelita Harapan</div>
+          <div class="tl-desc">Assisted in planning divisional programs and strengthening team engagement.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
